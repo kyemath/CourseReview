@@ -1,0 +1,17 @@
+<center><h3> Course Status Table</h3>
+  <table border=2 width="50%">
+    <tr >
+      <th> Course Name</th><th>Status</th><th>Score card</th>
+    </tr>
+  {{#each docs}}
+    <tr>
+      <td> {{this.cid}}</td><td>{{this.status}}</td><th>
+  <form id="{{this.cid}}" action='/viewscore'  method='post'>
+<!-- Your Form -->
+	<input type='hidden' name='courseid' value='{{this.cid}}' >
+<a href="javascript:{}" onclick="document.getElementById('{{this.cid}}').submit(); return false;">view score card</a>
+</form></th>
+    </tr>
+  {{/each}}
+</table>
+</center>

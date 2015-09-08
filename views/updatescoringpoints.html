@@ -1,0 +1,28 @@
+
+<center>
+
+  {{#if done}}
+  <h4>Standard updated successfully</h4>
+  {{/if}}
+  <form action="/inputstandard" method="post">
+  <table>
+    <tr>
+      <th>Select the standard type :</tH><td ><select name="standardtype">
+  <option value="CourseOverviewandIntroduction">Course Overview and Introduction</option>
+  <option value="LearningObjectives">Learning Objectives</option>
+  <option value="AssessmentandMeasurement">Assessment and Measurement</option>
+  <option value="InstructionalMaterials">Instructional Materials</option>
+  <option value="ActivitiesandLearnerInteraction">Activities and Learner Interaction</option>
+  <option value="CourseTechnology">Course Technology</option>
+  <option value="LearnerSupport">Learner Support</option>
+  <option value="AccessibilityandUsability">Accessibility and Usability</option>
+</select>
+</td></tr>
+<tr><th> Enter Standard number(ex: 1.1 Or 2.3 ,..) :</th>
+  <td><input type="text" name="standardnum"></td></tr>
+<tr><th> Enter Standard Point :</th>
+  <td><input type="text" name="standard"></td></tr>
+  <tr><th>Maximum points for the standard :</th><td> <input type="number" name="maxpoints"></td></tr></table>
+<tr><td colspan=2 align='center'><button type='submit'>Submit</button>&nbsp;<a href="/admin"><input type='button' value='Cancel' name='Cancel'></a></td></tr>
+</form>
+</canter>

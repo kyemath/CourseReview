@@ -1,0 +1,25 @@
+<center>
+{{#if scores}}
+  {{#each scores}}
+  <h3>Score card of {{this.cid}} </h3>
+  <table border=1 width="50%">
+  <tr><th>sec1</th><th>{{this.f1}}</th><th>{{this.c1}}</th></tr><tr>
+    <th>sec2</th><th>{{this.f2}}</th><th>{{this.c2}}</th></tr><tr>
+    <th>sec3</th><th>{{this.f3}}</th><th>{{this.c3}}</th></tr><tr>
+    <th>sec4</th><th>{{this.f4}}</th><th>{{this.c4}}</th></tr><tr>
+    <th>sec5</th><th>{{this.f5}}</th><th>{{this.c5}}</th></tr><tr>
+    <th>sec6</th><th>{{this.f6}}</th><th>{{this.c6}}</th></tr><tr>
+    <th>sec7</th><th>{{this.f7}}</th><th>{{this.c7}}</th></tr><tr>
+    <th>sec8</th><th>{{this.f8}}</th><th>{{this.c8}}</th></tr><tr>
+    <th>sec9</th><th>{{this.f9}}</th><th>{{this.c9}}</th></tr><tr>
+    <th>sec10</th><th>{{this.f10}}</th><th>{{this.c10}}</th></tr><tr>
+  <th>Total</th><th colspan="2">{{this.total}}</th></tr><tr>
+    <th>Result</th><th colspan="2">{{this.result}}</th></tr>
+    </table>
+  {{/each}}
+{{else}}
+<h3> Score card is not available</h3>
+{{/if}}
+
+<a href="/applicanthome">Home</a>
+</center>

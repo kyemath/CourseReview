@@ -1,0 +1,10 @@
+<center>
+
+  <form action='/changestatus' method='post'>
+  Change status to :<select name="status">
+  <option value="{{record.status}}">{{record.status}}</option>
+  <option value="inreview">In Review</option>
+
+</select>
+<button type='submit'>submit</button> <a href="/"><input type='button' value='Cancel' name='Cancel'></a>
+</center>

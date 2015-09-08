@@ -1,0 +1,76 @@
+<center><h3>Please Score the document</h3>
+  <form action='/submitscore' method='post'>
+  <table border="1" cellpadding="0" cellspacing="0" width="80%">
+  <tr ><th></th><th>S.No</th><th>Field</th><th>Score</th><th>Comments</th></tr>
+  {{#each standards}}
+  <tr><th rowspan="{{this.standard.length}}">{{this.standardtype}}</th>
+    {{#each this.standard }}
+    <td>{{this.standardnum}}</td><td>{{this.standardname}}:</td><td><input type="number" name="s{{this.standardnum}}" required min="0" max="{{this.maxpoints}}">(max:{{this.maxpoints}})</td><td><input type="text" name="c{{this.standardnum}}" required ></td></tr><tr>
+      {{/each}}
+    {{/each}}
+  </tr>
+  <!--
+  <tr ><th Rowspan="9">Course Overview And Introduction</th>
+  <td>1.1 Instructions make clear how to get started and where to find various course components : </td><td><input type="number" name="s11" required min="0" max="3">(max:3)</td><td><input type="text" name="c11" required ></td></tr>
+  <tr ><td>1.2 Learners are introduced to the purpose and structure of the course.  : </td><td><input type="number" name="s12" required min="0" max="3">(max:3)</td><td><input type="text" name="c12" required ></td></tr>
+  <tr ><td>1.3.Etiquette expectations (sometimes called “netiquette”) for online discussions, email, and other forms of communication are clearly stated : </td><td><input type="number" name="s13" required min="0" max="2">(max:2)</td><td><input type="text" name="c13" required ></td></tr>
+  <tr ><td>1.4.Course and/or institutional policies with which the learner is expected to comply are clearly stated, or a link to current policies is provided.  : </td><td><input type="number" name="s14" required min="0" max="2">(max:2)</td><td><input type="text" name="c14" required ></td></tr>
+  <tr ><td>1.5.Minimum technology requirements are clearly stated and instructions for use provided. : </td><td><input type="number" name="s15" required min="0" max="2">(max:2)</td><td><input type="text" name="c15" required ></td></tr>
+  <tr ><td>1.6.Prerequisite knowledge in the discipline and/or any required competencies are clearly stated.  : </td><td><input type="number" name="s16" required min="0" max="1">(max:1)</td><td><input type="text" name="c16" required ></td></tr>
+  <tr ><td>1.7.Minimum technical skills expected of the learner are clearly stated. : </td><td><input type="number" name="s17" required min="0" max="1">(max:1)</td><td><input type="text" name="c17" required ></td></tr>
+  <tr ><td>1.8.The self-introduction by the instructor is appropriate and is available online. : </td><td><input type="number" name="s18" required min="0" max="1">(max:1)</td><td><input type="text" name="c18" required ></td></tr>
+  <tr ><td>1.9.Learners are asked to introduce themselves to the class.  : </td><td><input type="number" name="s19" required min="0" max="1">(max:1)</td><td><input type="text" name="c19" required ></td></tr>
+  <tr ><th Rowspan="5">Learning Objectives</th>
+  <td>2.1.The course learning objectives, or course/program competencies, describe outcomes that are measurable.  : </td><td><input type="number" name="s21" required min="0" max="3">(max:3)</td><td><input type="text" name="c21" required ></td></tr>
+  <tr ><td>2.2.The module/unit learning objectives or competencies describe outcomes that are measurable and consistent with the course-level objectives or competencies.  : </td><td><input type="number" name="s22" required min="0" max="3">(max:3)</td><td><input type="text" name="c22" required ></td></tr>
+  <tr ><td>2.3.All learning objectives or competencies are stated clearly and written from the learner’s perspective.  : </td><td><input type="number" name="s23" required min="0" max="3">(max:3)</td><td><input type="text" name="c23" required ></td></tr>
+  <tr ><td>2.4.The relationship between learning objectives or competencies and course activities is clearly stated. : </td><td><input type="number" name="s24" required min="0" max="3">(max:3)</td><td><input type="text" name="c24" required ></td></tr>
+  <tr ><td>2.5. The learning objectives or competencies are suited to the level of the course.  : </td><td><input type="number" name="s25" required min="0" max="3">(max:3)</td><td><input type="text" name="c25" required ></td></tr>
+  <tr ><th Rowspan="5">Assessment and Measurement</th>
+  <td>3.1. The assessments measure the stated learning objectives or competencies.  : </td><td><input type="number" name="s31" required min="0" max="3">(max:3)</td><td><input type="text" name="c31" required ></td></tr>
+  <tr ><td>3.2.The course grading policy is stated clearly.  : </td><td><input type="number" name="s32" required min="0" max="3">(max:3)</td><td><input type="text" name="c32" required ></td></tr>
+  <tr ><td>3.3.Specific and descriptive criteria are provided for the evaluation of learners’ work and are tied to the course grading policy.  : </td><td><input type="number" name="s33" required min="0" max="3">(max:3)</td><td><input type="text" name="c33" required ></td></tr>
+  <tr ><td>3.4.The assessment instruments selected are sequenced, varied, and suited to the learner work being assessed.  : </td><td><input type="number" name="s34" required min="0" max="2">(max:2)</td><td><input type="text" name="c34" required ></td></tr>
+  <tr ><td>3.5. The course provides learners with multiple opportunities to track their  learning progress. : </td><td><input type="number" name="s35" required min="0" max="2">(max:2)</td><td><input type="text" name="c35" required ></td></tr>
+  <tr ><th Rowspan="6">Instructional
+Materials</th>
+  <td>4.1.The instructional materials contribute to the achievement of the stated course and module/unit learning objectives or competencies. : </td><td><input type="number" name="s41" required min="0" max="3">(max:3)</td><td><input type="text" name="c41" required ></td></tr>
+  <tr ><td>4.2. Both the purpose of instructional materials and how the materials are to be used for learning activities are clearly explained : </td><td><input type="number" name="s42" required min="0" max="3">(max:3)</td><td><input type="text" name="c42" required ></td></tr>
+  <tr ><td>4.3. All instructional materials used in the course are appropriately cited.  : </td><td><input type="number" name="s43" required min="0" max="2">(max:2)</td><td><input type="text" name="c43" required ></td></tr>
+  <tr ><td>4.4. The instructional materials are current. : </td><td><input type="number" name="s44" required min="0" max="2">(max:2)</td><td><input type="text" name="c44" required ></td></tr>
+  <tr ><td>4.5.A variety of instructional materials is used in the course.  : </td><td><input type="number" name="s45" required min="0" max="2">(max:2)</td><td><input type="text" name="c45" required ></td></tr>
+  <tr ><td>4.6.The distinction between required and optional materials is clearly explained : </td><td><input type="number" name="s46" required min="0" max="1">(max:1)</td><td><input type="text" name="c46" required ></td></tr>
+  <tr ><th Rowspan="4">Learner
+Activities and
+Learner
+Interaction</th>
+  <td>5.1. The learning activities promote the achievement of the stated learning objectives or competencies.  : </td><td><input type="number" name="s51" required min="0" max="3">(max:3)</td><td><input type="text" name="c51" required ></td></tr>
+  <tr ><td>5.2. Learning activities provide opportunities for interaction that support active learning. : </td><td><input type="number" name="s52" required min="0" max="3">(max:3)</td><td><input type="text" name="c52" required ></td></tr>
+  <tr ><td>5.3.The instructor’s plan for classroom response time and feedback on assignments is clearly stated.  : </td><td><input type="number" name="s53" required min="0" max="3">(max:3)</td><td><input type="text" name="c53" required ></td></tr>
+  <tr ><td>5.4.The requirements for learner interaction are clearly stated.  : </td><td><input type="number" name="s54" required min="0" max="2">(max:2)</td><td><input type="text" name="c54" required ></td></tr>
+  <tr ><th Rowspan="5">Course
+Technology</th>
+  <td>6.1. The tools used in the course support the learning objectives and competencies.  : </td><td><input type="number" name="s61" required min="0" max="3">(max:3)</td><td><input type="text" name="c61" required ></td></tr>
+  <tr ><td>6.2.Course tools promote learner engagement and active learning. : </td><td><input type="number" name="s62" required min="0" max="3">(max:3)</td><td><input type="text" name="c62" required ></td></tr>
+  <tr ><td>6.3.Technologies required in the course are readily obtainable.  : </td><td><input type="number" name="s63" required min="0" max="2">(max:2)</td><td><input type="text" name="c63" required ></td></tr>
+  <tr ><td>6.4.The course technologies are current. : </td><td><input type="number" name="s64" required min="0" max="1">(max:1)</td><td><input type="text" name="c64" required ></td></tr>
+  <tr ><td>6.5.Links are provided to privacy policies for all external tools required in the course. : </td><td><input type="number" name="s65" required min="0" max="1">(max:1)</td><td><input type="text" name="c65" required ></td></tr>
+  <tr ><th Rowspan="4">Learner
+Support</th>
+  <td>7.1.The course instructions articulate or link to a clear description of the technical support offered and how to obtain it.  : </td><td><input type="number" name="s71" required min="0" max="3">(max:3)</td><td><input type="text" name="c71" required ></td></tr>
+  <tr ><td>7.2.Course instructions articulate or link to the institution’s accessibility policies and services. : </td><td><input type="number" name="s72" required min="0" max="3">(max:3)</td><td><input type="text" name="c72" required ></td></tr>
+  <tr ><td>7.3.Course instructions articulate or link to an explanation of how the institution’s academic support services and resources can help learners succeed in the course and how learners can obtain them.  : </td><td><input type="number" name="s73" required min="0" max="2">(max:2)</td><td><input type="text" name="c73" required ></td></tr>
+  <tr ><td>7.4. Course instructions articulate or link to an explanation of how the institution’s student services and resources can help learners succeed and how learners can obtain them  : </td><td><input type="number" name="s74" required min="0" max="1">(max:1)</td><td><input type="text" name="c74" required ></td></tr>
+  <tr ><th Rowspan="5">Accessibility
+and Usability</th>
+  <td>8.1.Course navigation facilitates ease of use. : </td><td><input type="number" name="s81" required min="0" max="3">(max:3)</td><td><input type="text" name="c81" required ></td></tr>
+  <tr ><td>8.2.Information is provided about the accessibility of all technologies required in the course. : </td><td><input type="number" name="s82" required min="0" max="3">(max:3)</td><td><input type="text" name="c82" required ></td></tr>
+  <tr ><td>8.3.The course provides alternative means of access to course materials in formats that meet the needs of diverse learners.  : </td><td><input type="number" name="s83" required min="0" max="2">(max:2)</td><td><input type="text" name="c83" required ></td></tr>
+  <tr ><td>8.4. The course design facilitates readability.  : </td><td><input type="number" name="s84" required min="0" max="2">(max:2)</td><td><input type="text" name="c84" required ></td></tr>
+  <tr ><td>8.5. Course multimedia facilitate ease of use. : </td><td><input type="number" name="s85" required min="0" max="2">(max:2)</td><td><input type="text" name="c85" required ></td></tr>
+-->
+  <tr><td colspan=3 align='center'><button type='submit'>submit</button> <a href="/"><input type='button' value='Cancel' name='Cancel'></a></td></tr>
+
+  </table>
+  </form>
+</center>

@@ -1,0 +1,15 @@
+<center>
+  <form action='/scoredoc' method='post'>
+    <table>
+      {{#if docs}}
+      <h3>Review the following documents</h3><br>
+  {{#each docs}}
+<tr ><td><input type="radio" name="selected" value="{{this.cid}}" >{{this.cid}}</td><th>|| {{this.status}}</th>
+  </tr>
+  {{/each}}
+<tr><td colspan=2 align='center'><button type='submit'>submit</button> <a href="/"><input type='button' value='Cancel' name='Cancel'></a></td></tr>
+{{else}}
+<h3>No Documents available to Review</h3><br>
+{{/if}}
+</table>
+</form>

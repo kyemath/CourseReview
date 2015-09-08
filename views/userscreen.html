@@ -1,0 +1,34 @@
+<html ng-app>
+<head>
+<title>User Page</title>
+<style>
+ .menu {
+    float:left;
+    width:10%;
+    height:100%;
+  }
+  .mainContent {
+    float:left;
+    width:89%;
+    height:100%;
+  }
+</style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+</head>
+<body>
+<center><h3>Submit A new Document</h3>
+  <form action='/submitdoc' method='post'>
+  <table align='center'>
+  <tr><th>Applicant Name: </th><th><input type='text' name='aname'></th></tr>
+  <tr><th>CourseId: </th><th><input type='text' name='cid'></th></tr>
+  <tr><th>email:</th><th><input type="email" name="email" /></th></tr>
+  <tr><th colspan=2><button type='submit'>Submit</button><a href="/logout"> &nbsp;<input type='button' value='Cancel' name='Cancel'></a></th></tr></table>
+  </form>
+</center>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+</html>
