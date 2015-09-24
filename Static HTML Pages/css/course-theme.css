@@ -5,6 +5,45 @@
  */
 
 
+.verty li {
+  float: none;
+    text-align: center;
+    font-size: 1.4em;
+    height: 50px;
+    border: thin solid black;
+}
+
+.verty li a {
+    margin: -2px;
+    border-radius: 0;
+    color: black;
+}
+
+.verty li a:hover {
+    border-color: black !important;
+    margin: 0;
+    background-color: #d9534f;
+}
+
+.verty li.active a {
+    border-color: black !important;
+    margin: 0;
+    color: white !important;
+    background-color: #c12e2a !important;
+}
+
+.verty li.active a:hover {
+    border-color: black !important;
+    margin: 0;
+}
+
+.boxy {
+    border: thin solid black;
+    width: 470px;
+    height: auto;
+    padding: 11px;
+    margin: 12px 0 12px 0;
+}
 
 .btn-default,
 .btn-primary,

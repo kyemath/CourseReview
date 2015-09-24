@@ -18,55 +18,152 @@
     <link href="/Static HTML Pages/css/course-theme.css" rel="stylesheet">
   </head>
 
+    
+    
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <div class="container">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Course Review System</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-danger">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-    <div class="jumbotron">
-      <div class="container">
-          <!-- possible place for announcements and updates -->
-      </div>
+    </button>
+    <a class="navbar-brand" href="#">Course Review System</a>
     </div>
-    <div class="container">
-        
-      <!-- insert partial here -->
+    <div id="navbar" class="navbar-collapse collapse">
           
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control">
+            </div>
+                <button type="submit" class="btn btn-danger">Sign in</button>
+        </form>
+    </div><!--/.navbar-collapse -->
+    </div>
+    </nav>
+    
       
+    <div class="jumbotron">
+    <div class="container">
+          <!-- possible place for announcements and updates -->
+    </div>
+    </div>
+      
+    <!-- instructor view template here -->  
+    <div class="container">
+    <div class="row">
+        
+    <!-- SIDE NAV TABS -->
+    <div class="col-md-3">
+        <ul class="nav nav-tabs verty" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Introduction</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Submit New Course</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Check Status</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Add Auditors</a></li>
+        </ul>
+    </div>
+    
+    <!-- SIDE NAV TAB VIEWS -->
+    <div class="col-md-9">
+    <div class="tab-content">
+        <!-- INTRO -->
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <h2>Course Review System: Introduction</h2>
+            <p class="boxy">
+                You as an author of the course can submit your course for review, check the status of any previously submitted cours, or add                         auditors who may see the results of the reviews.
+            </p>
+        <!-- Modal Button -->    
+        <button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">
+        Watch the intro video <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
+        </button>
+            
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Introduction</h4>
+        </div>
+        <div class="modal-body">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nItSSTwBvSU" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        <!-- END Modal -->            
+        </div>
+        
+        <!-- SUBMIT -->
+        <div role="tabpanel" class="tab-pane" id="profile">
+                   <div class="col-md-6">
+          <h3>Course Information:</h3>
+            <form>
+            <div class="form-group">
+            <label for="InputNumber">Course Number</label>
+            <input type="text" class="form-control" id="InputNumber" placeholder="Number">
+            </div>
+            <div class="form-group">
+            <label for="InputTitle">Course Title</label>
+            <input type="text" class="form-control" id="InputTitle" placeholder="Title">
+            </div>
+            <div class="form-group">
+            <label for="InputCourseID">Course ID in Blackboard</label>
+            <input type="text" class="form-control" id="InputCourseID" placeholder="ID">
+            </div>
+            <div class="form-group">
+            <label for="InputName">Instructor Name</label>
+            <input type="text" class="form-control" id="InputName" placeholder="Name">
+            </div>
+            <div class="form-group">
+            <label for="InputEmail">Instructor Email</label>
+            <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+            </div>
+            <p><a class="btn btn-default" href="#" role="button">Submit &raquo;</a></p>
+            </form>
+        </div>
+        <div class="col-md-3">
+          <h3>Help:</h3>
+            <p><a href="">Course information example</a></p>
+            <p><a href="">How to find course ID in Blackboard - video</a></p>
+       </div>
+        </div>
+        
+        <!-- STATUS -->
+        <div role="tabpanel" class="tab-pane" id="messages">
+            The
+        </div>
+        
+        <!-- AUDITORS -->
+        <div role="tabpanel" class="tab-pane" id="settings">
+            Test
+        </div>
+        
+    </div> <!-- END SIDE NAV TAB VIEWS -->
+        
+        
+    </div> <!-- close column_9 -->
+    </div> <!-- close row -->
 
         
         
+      <!-- end instructor template here -->
         
-        
-        
-      <!-- end partial here -->
-        
-      <hr>
-      <footer>
-        <p>&copy; DLC 2015</p>
-      </footer>
-    </div> <!-- /container -->
+<hr>
+<footer>
+<p>&copy; DLC 2015</p>
+</footer>
+</div> <!-- /container -->
 
+      
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
